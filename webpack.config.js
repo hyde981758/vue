@@ -16,7 +16,7 @@ module.exports = {
             inject:'body'
         })
     ],
-    resolve:{alias:{'vue':'vue/dist/vue.js'}},
+    // resolve:{alias:{'vue':'vue/dist/vue.js'}},
     module:{
         rules:[
             {
@@ -35,29 +35,21 @@ module.exports = {
                 ]
             },
             {
-                test:/\.scss$/,
-                use:[
-                    'style-loader',
-                    'css-loader',
-                    'sass-loader'
-                ]
-            },
-            {
                 test:/\.tpl$/,
                 use:[
                     'html-loader'
                 ]
             },
             {
-                test:/\.(png|jpg|gif)$/,
+                test:/\.(png|jpg|gif|ttf)$/,
                 use:[
                     {
                         loader:'url-loader',
                         options:{
                             limit:5000
                         }
-                    },
-                    'image-webpack-loader'
+                    }
+                    // 'image-webpack-loader'
                 ]
             },
             {
